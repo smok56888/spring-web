@@ -1,7 +1,5 @@
 package smok.springmvc.utils;
 
-import java.util.Random;
-
 import org.apache.commons.lang.math.RandomUtils;
 
 /**
