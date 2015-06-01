@@ -76,6 +76,13 @@
 
 	<bean id="userService" class="smok.springmvc.service.impl.UserService">
 		<!-- <property name="userDao" ref="userDao"></property> -->
-	</bean>	
+	</bean>
+
+	<bean id="newsDao" class="smok.springmvc.dao.impl.NewsDao" >
+		<property name="sqlSession" ref="sqlSession"></property>
+	</bean>
+	<bean id="newsService" class="smok.springmvc.service.impl.NewsService">
+		<!-- <property name="newsDao" ref="newsDao"></property> -->
+	</bean>
 
 </beans>

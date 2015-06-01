@@ -16,9 +16,9 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/configs/spring-config.xml</param-value>
 	</context-param>
-	
-	 <!--由Sprng载入的Log4j配置文件位置 -->
-	 <context-param>
+
+	<!--由Sprng载入的Log4j配置文件位置 -->
+	<context-param>
 		<param-name>webAppRootKey</param-name>
 		<param-value>web.root</param-value>
 	</context-param>
@@ -32,18 +32,28 @@
 		<param-value>1000</param-value>
 	</context-param>
 
+	<!-- 编码过滤 -->
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 	<!-- Spring监听 -->
 	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>	
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<!--
+	<!-- <listener> <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class> 
+		</listener> -->
+	<!-- -->
 	<listener>
-		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>		
-	</listener>	
-	 -->
-	<!--
-	 -->
-	<listener>	
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="NewsMapper">
+	<resultMap type="News" id="newsMap">
+		<id property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="url" column="url" />
+		<result property="addtime" column="addtime" />
+	</resultMap>
+
+	<select id="getList" parameterType="News" resultType="News">
+		select * from t_news
+		<where>
+			<if test="title!=null">
+				title like CONCAT(CONCAT('%', #{title}),'%')
+			</if>
+		</where>
+	</select>
+</mapper>

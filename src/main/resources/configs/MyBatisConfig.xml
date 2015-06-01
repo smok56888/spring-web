@@ -14,11 +14,13 @@
 	<!-- 配置映射类的别名 -->
 	<typeAliases>
 		<typeAlias type="smok.springmvc.model.tmodel.User" alias="User" />
+		<typeAlias type="smok.springmvc.model.tmodel.News" alias="News" />
 	</typeAliases>
 
 	<!-- 配置Mapper文件的路径 -->
 	<mappers>
 		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/NewsMapper.xml" />
 	</mappers>
 
 </configuration>  
