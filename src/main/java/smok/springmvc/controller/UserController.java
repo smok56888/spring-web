@@ -2,6 +2,8 @@ package smok.springmvc.controller;
 
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,10 +35,5 @@ public class UserController {
 			e.printStackTrace();
 		}
 		return mv;
-	}
-	
-	private static Logger newlog = Logger.getLogger("NewLogger");
-	public static void testLog(){
-		newlog.info("this is new log");
 	}
 }
