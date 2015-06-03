@@ -84,5 +84,13 @@
 	<bean id="newsService" class="smok.springmvc.service.impl.NewsService">
 		<!-- <property name="newsDao" ref="newsDao"></property> -->
 	</bean>
+	
+	
+	<bean id="loveDao" class="smok.springmvc.dao.impl.LoveDao" >
+		<!-- <property name="sqlSession" ref="sqlSession"></property> -->
+	</bean>
+	<bean id="loveService" class="smok.springmvc.service.impl.LoveService">
+		<!-- <property name="newsDao" ref="newsDao"></property> -->
+	</bean>
 
 </beans>

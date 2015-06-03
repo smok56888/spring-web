@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="LoveMapper">
+	<resultMap type="LovePicture" id="lovePictureMap">
+		<id property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="desc" column="desc" />
+		<result property="url" column="url" />
+		<result property="sort" column="sort" />
+		<result property="position" column="position" />
+	</resultMap>
+
+	<select id="getList" resultType="LovePicture">
+		select * from t_love_picture
+		order by id
+		limit #{offset},#{count}
+	</select>
+</mapper>

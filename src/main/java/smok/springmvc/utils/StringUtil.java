@@ -1,6 +1,7 @@
 package smok.springmvc.utils;
 
 import java.util.Random;
+import java.util.regex.Pattern;
 
 import org.apache.commons.lang.math.RandomUtils;
 
@@ -12,9 +13,7 @@ import org.apache.commons.lang.math.RandomUtils;
  */
 public class StringUtil {
 
-	public static void main(String[] args) {
-		System.out.println(getRandomString(100));
-	}
+	public static final String isDigital = "^\\d+$";
 
 	/**
 	 * 获取指定长度的随机字符串,要求传入的长度为大于0的数
@@ -36,5 +35,18 @@ public class StringUtil {
 			return sb.toString();
 		}
 		return null;
+	}
+
+	public static boolean isDigital(String str) {
+		if(str!=null && str.length()>0) {
+			return Pattern.matches(isDigital, str);
+		}
+		return false;
+	}
+
+	public static void main(String[] args) {
+		String str = "123";
+//		System.out.println(str.getBytes().length);
+		System.out.println(isDigital(str));
 	}
 }

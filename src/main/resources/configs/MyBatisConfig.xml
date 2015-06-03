@@ -15,12 +15,14 @@
 	<typeAliases>
 		<typeAlias type="smok.springmvc.model.tmodel.User" alias="User" />
 		<typeAlias type="smok.springmvc.model.tmodel.News" alias="News" />
+		<typeAlias type="smok.springmvc.model.tmodel.LovePicture" alias="LovePicture" />
 	</typeAliases>
 
 	<!-- 配置Mapper文件的路径 -->
 	<mappers>
 		<mapper resource="mapper/UserMapper.xml" />
 		<mapper resource="mapper/NewsMapper.xml" />
+		<mapper resource="mapper/LoveMapper.xml" />
 	</mappers>
 
 </configuration>  
